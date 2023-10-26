@@ -1,0 +1,20 @@
+<%- layout('layout/default') -%>
+<!--- AUTH --->
+<section class="auth">
+    <div class="centre">
+        <form id="login_form" method="post" action="/login" class="form auth_form">
+            <span class="H2">Увійти</span>
+            <label class="styled_input">
+                <span class="styled_input-title">Email</span>
+                <input type="email" id="email" name="email" class="<%= error ? 'error' : ''%>">
+            </label>
+            <label class="styled_input">
+                <span class="styled_input-title">Пароль</span>
+                <input type="password" id="password" name="password" class="<%= error ? 'error' : ''%>">
+            </label>
+            <button class="btn" type="submit">Увійти</button>
+            <span class="change-aut_method">Якщо у вас немає аккаунту можете його <a href="/register">зареєструвати</a></span>
+        </form>
+    </div>
+</section>
+<script src="/js/components/login.js"></script>

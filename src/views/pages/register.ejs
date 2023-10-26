@@ -1,0 +1,29 @@
+<%- layout('layout/default') -%>
+
+<!--- AUTH --->
+<section class="auth">
+    <div class="centre">
+        <form id="auth_form" class="form auth_form" method="post" action="/register">
+            <span class="H2">Зареєструватись</span>
+            <label class="styled_input">
+                <span class="styled_input-title">Email</span>
+                <input type="email" name="email" id="email" class="<%= error ? 'error' : ''%>">
+            </label>
+            <label class="styled_input">
+                <span class="styled_input-title">Ім'я</span>
+                <input type="text" name="name" id="name" class="<%= error ? 'error' : ''%>">
+            </label>
+            <label class="styled_input">
+                <span class="styled_input-title">Пароль</span>
+                <input type="password" name="password" id="password" class="<%= error ? 'error' : ''%>">
+            </label>
+            <label class="styled_input">
+                <span class="styled_input-title">Повторіть пароль</span>
+                <input type="password" name="repeatPassword" id="repeatPassword" class="<%= error ? 'error' : ''%>">
+            </label>
+            <button class="btn" type="submit">Увійти</button>
+            <span class="change-aut_method">Якщо у вас є аккаунт можете <a href="/login">увійти</a></span>
+        </form>
+    </div>
+</section>
+<script src="/js/components/register.js"></script>

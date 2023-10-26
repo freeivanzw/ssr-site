@@ -1,0 +1,19 @@
+<% layout('layout/default'); %>
+
+<!--- CREATE POST --->
+<section class="create_post">
+    <div class="centre">
+        <span class="H1">Написати пост</span>
+        <form method="post" action="/create-post">
+            <label class="styled_input">
+                <span class="styled_input-title">Назва</span>
+                <input type="text" name="title" id="title" class="<%= error ? 'error' : '' %>">
+            </label>
+            <label class="styled_input">
+                <span class="styled_input-title">Текст</span>
+                <textarea name="text" id="text" class="<%= error ? 'error' : '' %>"></textarea>
+            </label>
+            <button type="submit" class="btn">Відправити</button>
+        </form>
+    </div>
+</section>

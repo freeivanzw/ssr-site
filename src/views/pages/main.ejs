@@ -1,0 +1,24 @@
+<% layout('layout/default') -%>
+
+<!--- POSTS LIST --->
+<section class="posts_list">
+    <div class="centre">
+        <span class="H1">Всі дописи</span>
+
+        <% if (posts.length > 0) { %>
+            <ul>
+                <% for (let post of posts) { %>
+                    <li class="posts_list-item">
+                        <b class="H4"><%= post.title; %></b>
+                        <i> author name</i>
+                        <time class="create_date">01/01/2022</time>
+                        <span class="text">post text</span>
+                    </li>
+                <% } %>
+            </ul>
+        <% } else { %>
+            <span>Дописів ще не існує, ви можете додати перший</span>
+        <% }%>
+
+    </div>
+</section>

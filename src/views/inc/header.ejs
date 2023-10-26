@@ -1,0 +1,20 @@
+<!--- HEADER --->
+<header class="site_header">
+    <div class="centre">
+        <a href="/" class="logo">SSR Blog</a>
+        <nav class="site_header-nav">
+            <ul>
+                <% if (isAuth) {%>
+                    <li><a href="/user"><%= user.name %></a></li>
+                    <li><a href="/my-posts">Мої записи</a></li>
+                    <li><a href="/create-post">Написати запис</a></li>
+                <% } %>
+                <% if (!isAuth) { %>
+                    <li><a href="/login">Увійдіть</a></li>
+                <% } else { %>
+                    <li><a href="/logout">Вийти</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,40 @@
+<% layout('layout/default'); %>
+<%
+
+function toFormat(date) {
+    const postDate = new Date(date);
+
+    const year = postDate.getFullYear();
+    const month = postDate.getMonth();
+    const day = postDate.getDate();
+
+    function padZero(num) {
+        return num < 10 ? '0' + num : num;
+    }
+
+    return `${padZero(day)}:${padZero(month)}:${padZero(year)}`;
+}
+
+ %>
+
+
+<!--- MY POSTS --->
+<section class="my_posts">
+    <div class="centre">
+        <span class="H1">Мої записи</span>
+        <% if (posts.length > 0) { %>
+            <ul>
+                <% for (let post of posts) { %>
+                    <li class="post">
+                        <b class="post_name"><%= post.title; %></b>
+                        <time><%= toFormat(post.creation_date); %></time>
+                        <span class="post_text"><%= post.text; %></span>
+                        <a href="/remove-post/<%= post.id; %>" class="post-delete">Видалити</a>
+                    </li>
+                <% } %>
+            </ul>
+        <% } else { %>
+            <span>У вас немає записів. <a href="/create-post">Додати</a></span>
+        <% }%>
+    </div>
+</section>

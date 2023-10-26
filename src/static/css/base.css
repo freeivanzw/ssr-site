@@ -1,0 +1,337 @@
+:root {
+    --main-color: #175c8e;
+
+    --text-color-contrast: #fff;
+    --text-color: #333;
+    --border-color: #8e8e8e;
+    --border-radius: 6px;
+
+    --success: #39A65E;
+    --warning: #e1c300;
+    --danger: #E61801;
+
+    --section-bottom: 120px
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Bold.eot');
+    src: url('/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Roboto-Bold.woff') format('woff'),
+    url('/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Italic.eot');
+    src: url('/fonts/Roboto-Italic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Roboto-Italic.woff') format('woff'),
+    url('/fonts/Roboto-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Medium.eot');
+    src: url('/fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Roboto-Medium.woff') format('woff'),
+    url('/fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Regular.eot');
+    src: url('/fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Roboto-Regular.woff') format('woff'),
+    url('/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,*::before,*::after {
+    box-sizing: border-box
+}
+
+body,h1,h2,h3,h4,p,li,figure,figcaption,blockquote,dl,dd {
+    margin: 0;
+    padding: 0;
+}
+
+menu,ul,ol {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+img {
+    display: block
+}
+
+input,button,textarea,select {
+    font: inherit
+}
+
+HTML {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 360px;
+    height: 100%;
+    font-family: 'Roboto', Arial, Tahoma ;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+.centre {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+h1, .H1 {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+h2, .H2 {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+h3, .H3 {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+h4, .H4 {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+h5, .H5 {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.styled_input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.styled_input-title {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+a {
+    color: var(--main-color);
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--text-color);
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+    height: 32px;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0 8px;
+    transition: 0.3s;
+}
+
+textarea {
+    height: 120px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    resize: none;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+}
+
+input[type=text].error,
+input[type=email].error,
+input[type=password].error,
+textarea.error {
+    border-color: var(--danger);
+}
+
+.btn {
+    font-size: 16px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    color: var(--text-color-contrast);
+    padding: 6px 12px;
+    background-color: var(--main-color);
+    min-height: 32px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.75;
+}
+
+.btn.disabled,
+.btn:disabled {
+    pointer-events: none;
+    filter: grayscale(1);
+    opacity: 0.75;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+    /* --- HEADER --- */
+
+.site_header {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.site_header .centre {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.site_header .logo {
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.site_header-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-left: 20px;
+}
+
+.site_header-nav a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.site_header-nav a:hover {
+    text-decoration: underline;
+}
+
+/* --- HEADER --- */
+/* --- FOOTER --- */
+
+.site_footer {
+    padding: 10px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- FOOTER --- */
+/* --- AUTH --- */
+
+.auth {
+    margin-bottom: var(--section-bottom);
+}
+
+.auth_form .H2 {
+    text-align: center;
+}
+
+.auth_form {
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+.change-aut_method {
+    margin-top: 10px;
+}
+
+/* --- CREATE POST --- */
+
+.create_post {
+    padding-bottom: 100px;
+}
+
+.create_post .centre {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- CREATE POST --- */
+/* --- MY POSTS --- */
+
+.my_posts {
+    padding-bottom: 100px;
+}
+
+/* --- MY POSTS --- */
+/* --- POSTS LIST --- */
+
+.posts_list {
+    padding-bottom: 100px;
+}
+
+.posts_list .centre {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts_list .H1 {
+    text-align: center;
+}
+
+.posts_list-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts_list-item + .posts_list-item {
+    margin-top: 12px;
+}
+
+/* --- POSTS LIST --- */
